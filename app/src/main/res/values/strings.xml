@@ -23,6 +23,7 @@
     <string name="nav_profile">My profile</string>
     <string name="nav_pass">Change Password</string>
     <string name="nav_device">Device Management</string>
+    <string name="nav_scheduler">Scheduler</string>
 
     <string name="nav_draw_open">Open navigation drawer</string>
     <string name="nav_draw_close">Close navigation drawer</string>

@@ -20,6 +20,7 @@ import com.example.iot_app.fragment.AccountFragment;
 import com.example.iot_app.fragment.DashboardFragment;
 import com.example.iot_app.fragment.DeviceFragment;
 import com.example.iot_app.fragment.HomeFragment;
+import com.example.iot_app.fragment.SchedulerFragment;
 import com.google.android.material.navigation.NavigationView;
 
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
@@ -32,6 +33,7 @@ public class ToolbarActivity extends AppCompatActivity implements NavigationView
     private static final int FRAGMENT_DASHBOARD = 1;
     private static final int FRAGMENT_DEVICEMANAGEMENT = 2;
     private static final int FRAGMENT_ACCOUNT = 3;
+    private static final int FRAGMENT_SCHEDULER = 4;
     private int mCurrentFragment = FRAGMENT_HOME;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +78,11 @@ public class ToolbarActivity extends AppCompatActivity implements NavigationView
             if(mCurrentFragment != FRAGMENT_ACCOUNT){
                 replaceFragment(new AccountFragment());
                 mCurrentFragment = FRAGMENT_ACCOUNT;
+            }
+        } else if(id == R.id.nav_scheduler){
+            if(mCurrentFragment != FRAGMENT_SCHEDULER){
+                replaceFragment(new SchedulerFragment());
+                mCurrentFragment = FRAGMENT_SCHEDULER;
             }
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);

@@ -16,15 +16,16 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 public class MQTTHelper_Device {
     public MqttAndroidClient mqttAndroidClient;
 
-    public final String[] arrayTopics = {"NhanHuynh/feeds/led"};
+    // Chủ đề mà bạn muốn đăng ký lắng nghe
+    public final String[] arrayTopics = {"v1/devices/me/telemetry"};
 
-    final String clientId = "12345678";
-    final String username = "NhanHuynh";
-    final String password = "aio_zxeo20IqleJBD2jDpd8RSxDfiiQC";
+    // Thông tin kết nối MQTT cho ThingsBoard
+    final String clientId = "your-client-id";
+    final String username = "v8k7qkH2Ae7VgEEFWWk1";
+    final String password = "";  // Trong trường hợp ThingsBoard không yêu cầu mật khẩu, để trống
+    final String serverUri = "tcp://demo.thingsboard.io:1883";
 
-    final String serverUri = "tcp://io.adafruit.com:1883";
-
-    public MQTTHelper_Device(DeviceFragment context){
+    public MQTTHelper_Device(DeviceFragment context) {
         mqttAndroidClient = new MqttAndroidClient(context.getContext(), serverUri, clientId);
         mqttAndroidClient.setCallback(new MqttCallbackExtended() {
             @Override
@@ -34,7 +35,7 @@ public class MQTTHelper_Device {
 
             @Override
             public void connectionLost(Throwable throwable) {
-
+                // Xử lý khi kết nối bị mất
             }
 
             @Override
@@ -44,7 +45,7 @@ public class MQTTHelper_Device {
 
             @Override
             public void deliveryComplete(IMqttDeliveryToken iMqttDeliveryToken) {
-
+                // Xử lý khi việc gửi message hoàn tất
             }
         });
         connect();
@@ -54,7 +55,7 @@ public class MQTTHelper_Device {
         mqttAndroidClient.setCallback(callback);
     }
 
-    private void connect(){
+    private void connect() {
         MqttConnectOptions mqttConnectOptions = new MqttConnectOptions();
         mqttConnectOptions.setAutomaticReconnect(true);
         mqttConnectOptions.setCleanSession(false);
@@ -62,11 +63,9 @@ public class MQTTHelper_Device {
         mqttConnectOptions.setPassword(password.toCharArray());
 
         try {
-
             mqttAndroidClient.connect(mqttConnectOptions, null, new IMqttActionListener() {
                 @Override
                 public void onSuccess(IMqttToken asyncActionToken) {
-
                     DisconnectedBufferOptions disconnectedBufferOptions = new DisconnectedBufferOptions();
                     disconnectedBufferOptions.setBufferEnabled(true);
                     disconnectedBufferOptions.setBufferSize(100);
@@ -82,14 +81,13 @@ public class MQTTHelper_Device {
                 }
             });
 
-
-        } catch (MqttException ex){
+        } catch (MqttException ex) {
             ex.printStackTrace();
         }
     }
 
     private void subscribeToTopic() {
-        for(int i = 0; i < arrayTopics.length; i++) {
+        for (int i = 0; i < arrayTopics.length; i++) {
             try {
                 mqttAndroidClient.subscribe(arrayTopics[i], 0, null, new IMqttActionListener() {
                     @Override
@@ -104,7 +102,7 @@ public class MQTTHelper_Device {
                 });
 
             } catch (MqttException ex) {
-                System.err.println("Exceptionst subscribing");
+                System.err.println("Exception subscribing");
                 ex.printStackTrace();
             }
         }

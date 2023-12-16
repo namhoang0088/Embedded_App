@@ -40,7 +40,7 @@
                         android:background="#F3EBEB" >
 
                         <LinearLayout
-                            android:id="@+id/light_control"
+                            android:id="@+id/light_control_scheduler"
                             android:orientation="vertical"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -65,25 +65,20 @@
                             android:text="Đèn"
                             android:textSize="24sp"
                             android:textStyle="bold" />
-
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/button_light"
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_marginLeft="55dp"
-                            android:layout_marginRight="55dp"
-                            app:cardBackgroundColor="#F44336"
-                            app:cardCornerRadius="50dp">
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
 
-                            <LinearLayout
-                                android:id="@+id/light_status"
+                            <TextView
+                                android:id="@+id/light_scheduler_status"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical"
-                                android:background="@drawable/power_on"></LinearLayout>
-                        </androidx.cardview.widget.CardView>
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="--"
+                                android:textSize="30dp" />
+                        </LinearLayout>
+
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -112,6 +107,7 @@
                         android:background="#F3EBEB" >
 
                         <LinearLayout
+                            android:id="@+id/pump_control_scheduler"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/pump_image">
@@ -136,22 +132,18 @@
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/button_pumb"
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="55dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="55dp"
-                            android:layout_marginBottom="10dp"
-                            app:cardBackgroundColor="#F44336"
-                            app:cardCornerRadius="50dp">
-
-                            <LinearLayout
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp">
+                            <TextView
+                                android:id="@+id/pump_scheduler_status"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/power_on"></LinearLayout>
-                        </androidx.cardview.widget.CardView>
+                                android:layout_height="wrap_content"
+                                android:text="--"
+                                android:textSize="30dp"
+                                android:gravity="center"/>
+                        </LinearLayout>
 
 
                     </LinearLayout>
@@ -181,6 +173,7 @@
                         android:background="#F3EBEB" >
 
                         <LinearLayout
+                            android:id="@+id/fan_control_scheduler"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/fan_image">
@@ -205,22 +198,18 @@
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/button_fan"
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="55dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="55dp"
-                            android:layout_marginBottom="10dp"
-                            app:cardBackgroundColor="#F44336"
-                            app:cardCornerRadius="50dp">
-
-                            <LinearLayout
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp">
+                            <TextView
+                                android:id="@+id/fan_scheduler_status"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/power_on"></LinearLayout>
-                        </androidx.cardview.widget.CardView>
+                                android:layout_height="wrap_content"
+                                android:text="--"
+                                android:textSize="30dp"
+                                android:gravity="center"/>
+                        </LinearLayout>
 
 
                     </LinearLayout>

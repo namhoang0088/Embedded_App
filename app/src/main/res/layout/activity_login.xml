@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img">
+    android:background="@drawable/cut_card_background">
 
     <TextView
         android:id="@+id/textView"
@@ -11,26 +11,27 @@
         android:layout_height="107dp"
         android:fontFamily="sans-serif"
         android:shadowColor="#FFFFFF"
-        android:shadowDx="5"
-        android:shadowDy="5"
+        android:shadowDx="10"
+        android:shadowDy="10"
         android:shadowRadius="5"
-        android:text="GREEN HOUSE"
+        android:text="GREEN FARM"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#F54CAF51"
         android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+
         />
 
     <androidx.cardview.widget.CardView
         android:layout_width="381dp"
         android:layout_height="422dp"
+        app:cardBackgroundColor="#EAE7E7"
         app:cardCornerRadius="28dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView3"

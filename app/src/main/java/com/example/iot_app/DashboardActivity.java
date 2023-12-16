@@ -12,7 +12,7 @@ public class DashboardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-        txtTemp = findViewById(R.id.txtTemperature);
-        txtHumi = findViewById(R.id.txtHumidity);
+        txtTemp = findViewById(R.id.txt_soil_temp);
+        txtHumi = findViewById(R.id.txt_soil_humi);
     }
 }

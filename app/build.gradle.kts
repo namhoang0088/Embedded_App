@@ -56,7 +56,9 @@ dependencies {
     implementation("org.eclipse.paho:org.eclipse.paho.android.service:1.1.1")
 
     implementation ("com.github.PhilJay:MPAndroidChart:v3.1.0")
-
+    implementation ("com.android.volley:volley:1.2.1")
+    implementation ("androidx.fragment:fragment:1.3.6")
+    implementation ("com.squareup.okhttp3:okhttp:4.9.1")
 
 
 }
